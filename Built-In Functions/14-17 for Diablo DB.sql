@@ -32,9 +32,9 @@ SELECT Username, IpAddress AS [IP Address]
 --17. Show All Games with Duration and Part of the Day
 SELECT [Name] AS [Game]
 	,CASE
-		WHEN DATEPART(Hour, [Start]) BETWEEN 1 AND 11 THEN 'Morning'
+		WHEN DATEPART(Hour, [Start]) BETWEEN 0 AND 11 THEN 'Morning'
 		WHEN DATEPART(Hour, [Start]) BETWEEN 12 AND 17 THEN 'Afternoon'
-		ELSE 'Évening'
+		ELSE 'Evening'
 		END AS [Part of the Day]
 	,CASE
 		WHEN Duration <= 3 THEN 'Extra Short'
